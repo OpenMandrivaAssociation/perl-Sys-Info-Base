@@ -36,6 +36,6 @@ make test
 
 %files
 %defattr(-,root,root)
-%doc README changes
+%doc README Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
