@@ -1,5 +1,5 @@
 %define upstream_name    Sys-Info-Base
-%define upstream_version 0.72
+%define upstream_version 0.73
 
 Summary:	Base classes for Sys::Info
 Name:		perl-%{upstream_name}
