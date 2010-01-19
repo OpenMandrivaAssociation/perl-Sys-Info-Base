@@ -1,16 +1,21 @@
 %define upstream_name    Sys-Info-Base
 %define upstream_version 0.73
 
-Summary:	Base classes for Sys::Info
+%define _requires_exceptions perl(TARGET_CLASS)
+
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 1
-License:        GPL+ or Artistic
+Release:	%mkrel 2
+
+Summary:	Base classes for Sys::Info
+License:    GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/SYS/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Perl base classes for Sys::Info.
@@ -20,15 +25,13 @@ Perl base classes for Sys::Info.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
 %make
 
 %check
-make test
+%make test
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %makeinstall_std
 
 %clean
