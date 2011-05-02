@@ -1,11 +1,11 @@
 %define upstream_name    Sys-Info-Base
-%define upstream_version 0.73
+%define upstream_version 0.78
 
 %define _requires_exceptions perl(TARGET_CLASS)
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 
 Summary:	Base classes for Sys::Info
 License:    GPL+ or Artistic
